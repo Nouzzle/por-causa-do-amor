@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Roboto&display=swap');
+
+/* Shake animation */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.shake {
+    animation: shake 0.5s infinite;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3e9dc;
+    color: #4b3832;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.password-prompt {
+    position: fixed; /* Use fixed to ensure it stays in the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100; /* Ensure the prompt is above everything else */
+    padding: 1rem; /* Add padding to ensure content is not too close to the edges */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
+
+.password-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.password-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #8d5524;
+}
+
+.password-content p {
+    font-family: 'Roboto', sans-serif;
+    color: #4b3832;
+}
+
+.password-content input {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 80%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#surpriseButton {
+    padding: 8px 16px;
+    border: none;
+    background-color: #8d5524;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+}
+
+#surpriseButton:hover {
+    background-color: #a67c52;
+}
+
+
+.password-content button {
+    margin-top: 45px; /* Adjusted for spacing */
+    padding: 10px 20px;
+    border: none;
+    background-color: #8d5524;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    font-family: 'Cormorant Garamond', serif;
+    position: relative; /* Ensure it's positioned in relation to the container */
+    right: 0; /* Align it to the right */
+}
+
+.password-content button:hover {
+    background-color: #a67c52;
+}
+
+.hidden {
+    display: none;
+}
+
+.book {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    perspective: 2000px;
+    
+   
+    border-radius: 15px;
+    overflow: hidden;
+    
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    background: white url('https://www.transparenttextures.com/patterns/frenchstucco.png');
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    backface-visibility: hidden;
+    z-index: 10;
+    border-radius: 15px;
+}
+
+.page:nth-child(6) { z-index: 1; }
+.page:nth-child(5) { z-index: 2; }
+.page:nth-child(4) { z-index: 3; }
+.page:nth-child(3) { z-index: 4; }
+.page:nth-child(2) { z-index: 5; }
+.page:nth-child(1) { z-index: 6; }
+
+.page .content {
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    max-height: 400px; /* Ensure the photo gallery is scrollable */
+    overflow-y: auto;
+}
+
+.page h1, .page h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: #8d5524;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.page p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4b3832;
+}
+
+.page img {
+    width: 100%;
+    max-width: 300px; /* Set a maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+
+.page .content img {
+    display: block;
+    max-width: 100%;
+    margin: 10px auto; /* Center the images and add some spacing */
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    border: none;
+    background-color: #8d5524;
+    color: white;
+    cursor: pointer;
+    font-size: 1.8rem; /* Use rem units for better scalability */
+    border-radius: 5px;
+    z-index: 50;
+}
+
+#prev { left: 20px; }
+#next { right: 20px; }
+
+#emailIcon {
+    width: 100%;
+    max-width: 150px; /* Set a maximum width for the image */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 768px) {
+    body {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 20px; /* Add some padding for smaller screens */
+    }
+
+    .password-prompt, .book {
+        width: 100%; /* Use full width for smaller screens */
+        max-width: none; /* Remove maximum width */
+    }
+
+    .password-content, .page .content {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+
+    button {
+        width: 100%; /* Make buttons full width */
+        margin-top: 10px; /* Add some margin for spacing */
+    }
+
+    .page {
+        max-width: 25rem; /* Adjust max-width for smaller screens */
+    }
+
+    .password-content h1, .page h1, .page h2 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .password-content p, .page p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    #emailIcon {
+        max-width: 100px; /* Adjust the maximum width for smaller screens */
+    }
+    #surpriseButton {
+        font-size: 14px; /* Adjust font size for smaller screens */
+        padding: 6px 12px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        max-width: 20rem; /* Adjust max-width for very small screens */
+    }
+
+    .password-content h1, .page h1, .page h2 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .password-content p, .page p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .button {
+        font-size: 1.4rem; /* Adjust font size for very small screens */
+        padding: 6px 12px; /* Adjust padding for very small screens */
+    }
+
+    #emailIcon {
+        max-width: 80px; /* Adjust the maximum width for very small screens */
+    }
+    #surpriseButton {
+        font-size: 12px; /* Adjust font size for very small screens */
+        padding: 4px 8px; /* Adjust padding for very small screens */
+    }
+}
