@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('surpriseButton').addEventListener('click', function() {
-        window.location.href = 'sec.html'; // Redirect to index2.html
+        window.location.href = 'https://app.sane.fyi/s/bf5afaf8-5556-11ef-bcb0-338d27ca3d66?t=NWNemVz18I75YB7CwtiI&utm_source=share-menu&utm_medium=web'; // Redirect to index2.html
     });
 
     function updateButtons() {
